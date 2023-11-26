@@ -25,4 +25,9 @@ Struct Ride {
 
         emit RideRequested(rideCount, msg.sender, _destination, block.timestamp);
 }
+
+uint public balanceReceived;
+  function receivedMoney() public payable {
+        balanceReceived += msg.value;
+  }
 }

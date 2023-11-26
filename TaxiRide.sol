@@ -30,4 +30,8 @@ uint public balanceReceived;
   function receivedMoney() public payable {
         balanceReceived += msg.value;
   }
+
+  function withdrawMoneyTo(address payable _to) public{
+        _to.transfer(getBalance());
+  }
 }

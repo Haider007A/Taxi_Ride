@@ -14,8 +14,7 @@ Struct Ride {
  mapping(uint256=> Ride) public rides;
  uint256 public rideCount;
     event RideRequested(uint256 rideId, address passenger, string destination, uint256 timestamp);
-    event RideCompleted(uint256 rideId, uint256 timestamp);
-
+   
      function requestRide(string memory _destination) external {
         rideCount++;
         Ride storage newRide = rides[rideCount];
@@ -34,4 +33,6 @@ uint public balanceReceived;
   function withdrawMoneyTo(address payable _to) public{
         _to.transfer(getBalance());
   }
+   event RideCompleted(uint256 rideId, uint256 timestamp);
+
 }
